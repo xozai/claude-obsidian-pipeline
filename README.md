@@ -2,6 +2,8 @@
 
 Nightly export of Claude CLI and Claude Desktop conversations into topic-based Obsidian notes, with context injection support for new Claude sessions.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 ---
 
 ## Prerequisites
@@ -247,3 +249,11 @@ launchctl unload ~/Library/LaunchAgents/com.josecasaleos.claude-obsidian.plist
 | `launchctl start` does nothing | Check the log: `tail ~/.claude-obsidian-pipeline.log`. The LaunchAgent must be loaded first: `launchctl load ~/Library/LaunchAgents/com.josecasaleos.claude-obsidian.plist` |
 | `topic_slug = "skip"` in log | The conversation was too short or trivial. Run with `--force` to reclassify if you think it should be captured. |
 | Notes not appearing in Obsidian | iCloud sync delay — wait 30s and refresh Obsidian, or open the vault folder in Finder to trigger sync. |
+
+---
+
+## License
+
+MIT © 2026 Jose Leos — see [LICENSE](LICENSE) for full text.
+
+This project is not affiliated with Anthropic or Obsidian. Use of the Claude API is subject to [Anthropic's usage policies](https://www.anthropic.com/legal/usage-policy).
