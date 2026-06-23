@@ -42,7 +42,7 @@ def _all_note_paths(include_private: bool = False) -> list[Path]:
         return []
     paths = []
     for p in base.rglob("*.md"):
-        if "private" in p.relative_to(base).parts and not include_private:
+        if "private" in p.parts and not include_private:
             continue
         paths.append(p)
     return paths

@@ -3,6 +3,4 @@ __pycache__/
 *.pyo
 .DS_Store
 *.tmp
-.coverage
-.pytest_cache/
 ~/.claude-obsidian-state.json
