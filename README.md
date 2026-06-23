@@ -188,6 +188,36 @@ This conversation was sensitive.
 
 ---
 
+## Development
+
+### Repository layout
+
+| Path | Contents |
+|---|---|
+| `scripts/export_to_obsidian.py` | Nightly exporter — scans transcripts, classifies, writes/merges topic notes |
+| `scripts/load_memory.py` | Context loader — pulls notes by slug, recency, or keyword for injection |
+| `cron/setup_cron.sh` | Installer — LaunchAgent, symlink, and crontab fallback |
+| `templates/claude-memory-note.md` | Note template used when writing new topic notes |
+| `tests/` | `pytest` suite (parsing, classification, dedup, note writing, state, CLI, load_memory) |
+| `.github/workflows/` | PR-title lint (Conventional Commits) and release-please automation |
+
+### Running the test suite
+
+Install the test dependency and run `pytest` from the repo root:
+
+```bash
+pip3 install pytest
+python3 -m pytest -q
+```
+
+`pytest.ini` sets `pythonpath = scripts` and `testpaths = tests`, so the suite runs without extra flags. The tests are self-contained — they do not call the Anthropic API or touch your real vault.
+
+### Contributing
+
+PR titles must follow [Conventional Commits](https://www.conventionalcommits.org/) — see [CONTRIBUTING.md](CONTRIBUTING.md). Releases are cut automatically by release-please on merge to `main`.
+
+---
+
 ## Vault folder layout
 
 Notes are organized by domain under `claude-memory/`:
